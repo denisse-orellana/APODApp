@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-import { NasaAPI } from "./api/astronomy";
+import { NasaAPI } from "./api/nasa";
 
 import reactLogo from './assets/react.svg';
 import s from './style.module.css';
