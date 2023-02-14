@@ -39,8 +39,6 @@ function App() {
     fetchAPOD();
   }, []);  
 
-  console.log(astronomyPictureList);
-
   return (
     <>
       <div>
