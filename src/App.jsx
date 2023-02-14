@@ -9,29 +9,27 @@ import s from './style.module.css';
 
 function todaysPicture(array) {
   if (array && array.length > 0) {
-    let todaysPicture = array[array.length - 1];
-    return todaysPicture;
+    let todaysPicture = array[array.length - 1]; return todaysPicture;
   } return;
 }
 
 function lastPicturesArr(array) {
   if (array && array.length > 0) {
-    let lastPicturesArr = array.slice(-20).reverse();
-    return lastPicturesArr;
+    let lastPicturesArr = array.slice(-20).reverse(); return lastPicturesArr;
   } return;
 }
 
 function App() {
   const [currentAstronomyPicture, setCurrentAstronomyPicture] = useState();
-  const [astronomicPictureList, setAstronomicPictureList] = useState();
+  const [astronomyPictureList, setAstronomyPictureList] = useState();
 
   const fetchAPOD = useCallback(async () => {
     const astronomyPictureList = await NasaAPI.fetchAPOD();
     if (astronomyPictureList && astronomyPictureList.length > 0) {
       setCurrentAstronomyPicture(todaysPicture(astronomyPictureList));
-      setAstronomicPictureList(lastPicturesArr(astronomyPictureList));
+      setAstronomyPictureList(lastPicturesArr(astronomyPictureList));
     }
-  }, [currentAstronomyPicture, astronomicPictureList]);
+  }, [currentAstronomyPicture, astronomyPictureList]);
 
   function updateAstronomyPicture(astronomyPicture) {
     setCurrentAstronomyPicture(astronomyPicture);
@@ -40,6 +38,8 @@ function App() {
   useEffect(() => {
     fetchAPOD();
   }, []);  
+
+  console.log(astronomyPictureList);
 
   return (
     <>
@@ -50,7 +50,7 @@ function App() {
       <div>
         { currentAstronomyPicture && 
           <AstronomyPictureList
-            astronomyPictureList={ astronomicPictureList } 
+            astronomyPictureList={ astronomyPictureList } 
             onClickItem={ updateAstronomyPicture }
           />
         }
