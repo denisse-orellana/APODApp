@@ -27,12 +27,6 @@ function App() {
     fetchAPOD();
   }, []);  
 
-  // 1. Add as a modal and show the current apod
-  // console.log(currentAstronomyPicture)
-
-  // 2. Add apod list
-  // console.log(astronomicPictureList)
-
   return (
     <>
       <div>
