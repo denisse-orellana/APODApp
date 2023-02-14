@@ -12,6 +12,13 @@ export const AstronomyPictureOfDay = ({ astronomyPicture }) => {
       />
       <p>{ astronomyPicture.title }</p>
       <p>{ astronomyPicture.date }</p>
+      <p> 
+        {
+          astronomyPicture.copyright 
+          ? astronomyPicture.copyright 
+          : ""
+        }
+      </p>
       <p>
         { 
           astronomyPicture.explanation.length > MAX_EXPLANATION_CHAR 
