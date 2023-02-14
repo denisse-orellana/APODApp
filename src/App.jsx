@@ -7,6 +7,20 @@ import { AstronomyPictureList } from './components/AstronomyPictureList/Astronom
 import reactLogo from './assets/react.svg';
 import s from './style.module.css';
 
+function todaysPicture(array) {
+  if (array && array.length > 0) {
+    let todaysPicture = array[array.length - 1];
+    return todaysPicture;
+  } return;
+}
+
+function lastPicturesArr(array) {
+  if (array && array.length > 0) {
+    let lastPicturesArr = array.slice(-20).reverse();
+    return lastPicturesArr;
+  } return;
+}
+
 function App() {
   const [currentAstronomyPicture, setCurrentAstronomyPicture] = useState();
   const [astronomicPictureList, setAstronomicPictureList] = useState();
@@ -14,8 +28,8 @@ function App() {
   const fetchAPOD = useCallback(async () => {
     const astronomyPictureList = await NasaAPI.fetchAPOD();
     if (astronomyPictureList && astronomyPictureList.length > 0) {
-      setCurrentAstronomyPicture(astronomyPictureList[0]);
-      setAstronomicPictureList(astronomyPictureList.slice(0, 20));
+      setCurrentAstronomyPicture(todaysPicture(astronomyPictureList));
+      setAstronomicPictureList(lastPicturesArr(astronomyPictureList));
     }
   }, [currentAstronomyPicture, astronomicPictureList]);
 

@@ -15,7 +15,7 @@ export const AstronomyPictureOfDay = ({ astronomyPicture }) => {
       <p> 
         {
           astronomyPicture.copyright 
-          ? astronomyPicture.copyright 
+          ? `Image Credit & Copyright: ${astronomyPicture.copyright }` 
           : ""
         }
       </p>

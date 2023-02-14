@@ -20,7 +20,7 @@ export const AstronomyPictureListItem = ({ astronomyPicture, onClick }) => {
       <p> 
         {
           astronomyPicture.copyright 
-          ? astronomyPicture.copyright 
+          ? `Image Credit & Copyright: ${astronomyPicture.copyright }` 
           : ""
         }
       </p>
