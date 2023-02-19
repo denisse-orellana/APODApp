@@ -1,31 +1,48 @@
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
 import s from './style.module.css';
 
-const MAX_EXPLANATION_CHAR = 400;
+export const AstronomyPictureOfDay = ( props ) => {
 
-export const AstronomyPictureOfDay = ({ astronomyPicture }) => {
+  const { astronomyPicture, ...rest } = props;
+
   return (
-    <div>
-      <h2>AstronomyPictureOfDay</h2>
-      <img 
-        src={ astronomyPicture.url }  
-        alt={ astronomyPicture.title } 
-      />
-      <p>{ astronomyPicture.title }</p>
-      <p>{ astronomyPicture.date }</p>
-      <p> 
-        {
-          astronomyPicture.copyright 
-          ? `Image Credit & Copyright: ${astronomyPicture.copyright }` 
-          : ""
-        }
-      </p>
-      <p>
-        { 
-          astronomyPicture.explanation.length > MAX_EXPLANATION_CHAR 
-            ? astronomyPicture.explanation.slice(0, MAX_EXPLANATION_CHAR) + '...'
-            : astronomyPicture.explanation
-        }
-      </p>
-    </div>
+    <Modal
+      {...rest}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          <h2 className={ s.title }>{ astronomyPicture.title }</h2>
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body className='p-0'>
+        <img 
+          src={ astronomyPicture.url }  
+          alt={ astronomyPicture.title } 
+          className={ s.img }
+        />
+        <div className='p-5'>
+          <p className={ s.date }>{ astronomyPicture.date }</p>
+          <p className={ s.copyright }> 
+            {
+              astronomyPicture.copyright 
+              ? `Image Credit & Copyright: ${ astronomyPicture.copyright }` 
+              : ""
+            }
+          </p>
+          <p>
+            { astronomyPicture.explanation }
+          </p>
+        </div>
+
+        <div className='pb-5 px-5 text-center'>
+          <Button className={ s.close } onClick={props.onHide}>Close</Button>
+        </div>
+      </Modal.Body>
+    </Modal>
   )
 }

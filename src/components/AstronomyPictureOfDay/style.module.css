@@ -1,0 +1,36 @@
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--blue);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+p {
+  font-size: 1.7rem;
+  font-weight: normal;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.date {
+  font-weight: bold;
+  font-size: 1.9rem;
+}
+
+.copyright {
+  font-weight: bold;
+  font-size: 1.9rem;
+}
+
+.close {
+  background-color: var(--blue) !important;
+  border-color: var(--blue) !important;
+  font-size: 1.9rem !important;
+  padding: 1 1.5rem !important;
+}

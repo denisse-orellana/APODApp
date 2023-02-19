@@ -5,7 +5,6 @@ import { AstronomyPictureOfDay } from './components/AstronomyPictureOfDay/Astron
 import { AstronomyPictureList } from './components/AstronomyPictureList/AstronomyPictureList';
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { SearchAstronomyMedia } from './components/SearchAstronomyMedia/SearchAstronomyMedia';
-import { ModalEx } from './components/ModalEx/ModalEx';
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -29,8 +28,7 @@ function App() {
   const [currentAstronomyPicture, setCurrentAstronomyPicture] = useState();
   const [astronomyPictureList, setAstronomyPictureList] = useState();
   const [currentSearchAstronomy, setCurrentSearchAstronomy] = useState();
-
-  const [modalShow, setModalShow] = useState(true);
+  const [modalShow, setModalShow] = useState(false);
 
   const fetchAPOD = useCallback(async () => {
     const astronomyPictureList = await NasaAPI.fetchAPOD();
@@ -57,17 +55,20 @@ function App() {
 
   return (
     <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
-      </Button>
-
-      <ModalEx
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
       <div>
         <h1>NASA API</h1>
-        { currentAstronomyPicture && <AstronomyPictureOfDay astronomyPicture={ currentAstronomyPicture } />  }
+
+        <Button variant="primary" onClick={() => setModalShow(true)}>
+          Astronomy Picture Of The Day
+        </Button>
+
+        { currentAstronomyPicture && 
+          <AstronomyPictureOfDay 
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            astronomyPicture={ currentAstronomyPicture } 
+          />  
+        }
       </div>
       <div>
         <h2>Search Bar</h2>
