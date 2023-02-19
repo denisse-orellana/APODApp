@@ -5,6 +5,10 @@ import { AstronomyPictureOfDay } from './components/AstronomyPictureOfDay/Astron
 import { AstronomyPictureList } from './components/AstronomyPictureList/AstronomyPictureList';
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { SearchAstronomyMedia } from './components/SearchAstronomyMedia/SearchAstronomyMedia';
+import { ModalEx } from './components/ModalEx/ModalEx';
+
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 import reactLogo from './assets/react.svg';
 import s from './style.module.css';
@@ -25,6 +29,8 @@ function App() {
   const [currentAstronomyPicture, setCurrentAstronomyPicture] = useState();
   const [astronomyPictureList, setAstronomyPictureList] = useState();
   const [currentSearchAstronomy, setCurrentSearchAstronomy] = useState();
+
+  const [modalShow, setModalShow] = useState(true);
 
   const fetchAPOD = useCallback(async () => {
     const astronomyPictureList = await NasaAPI.fetchAPOD();
@@ -51,6 +57,14 @@ function App() {
 
   return (
     <>
+      <Button variant="primary" onClick={() => setModalShow(true)}>
+        Launch vertically centered modal
+      </Button>
+
+      <ModalEx
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
       <div>
         <h1>NASA API</h1>
         { currentAstronomyPicture && <AstronomyPictureOfDay astronomyPicture={ currentAstronomyPicture } />  }
