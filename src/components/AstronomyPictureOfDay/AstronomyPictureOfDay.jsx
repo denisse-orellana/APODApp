@@ -25,7 +25,7 @@ export const AstronomyPictureOfDay = ( props ) => {
           alt={ astronomyPicture.title } 
           className={ s.img }
         />
-        <div className='p-5'>
+        <div className='pt-5 px-5 pb-3'>
           <p className={ s.date }>{ astronomyPicture.date }</p>
           <p className={ s.copyright }> 
             {

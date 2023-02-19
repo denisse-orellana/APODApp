@@ -7,7 +7,6 @@ import { SearchBar } from './components/SearchBar/SearchBar';
 import { SearchAstronomyMedia } from './components/SearchAstronomyMedia/SearchAstronomyMedia';
 
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 
 import reactLogo from './assets/react.svg';
 import s from './style.module.css';

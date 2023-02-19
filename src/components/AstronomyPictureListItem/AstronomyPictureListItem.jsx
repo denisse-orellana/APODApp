@@ -1,6 +1,6 @@
 import s from './style.module.css';
 
-const MAX_EXPLANATION_CHAR = 400;
+const MAX_CHAR = 35;
 
 export const AstronomyPictureListItem = ({ astronomyPicture, onClick }) => {
 
@@ -9,28 +9,22 @@ export const AstronomyPictureListItem = ({ astronomyPicture, onClick }) => {
   }
 
   return (
-    <div onClick={onClick_}>
-      <h2>AstronomyPictureListItem</h2>
+    <div onClick={onClick_} className={ s.container }>
       <img 
+        className={ s.img }
         src={ astronomyPicture.url } 
         alt={ astronomyPicture.title } 
       />
-      <p>{ astronomyPicture.title }</p>
-      <p>{ astronomyPicture.date }</p>
-      <p> 
-        {
-          astronomyPicture.copyright 
-          ? `Image Credit & Copyright: ${astronomyPicture.copyright }` 
-          : ""
-        }
-      </p>
-      <p>
-        { 
-          astronomyPicture.explanation.length > MAX_EXPLANATION_CHAR 
-            ? astronomyPicture.explanation.slice(0, MAX_EXPLANATION_CHAR) + '...'
-            : astronomyPicture.explanation
-        }
-      </p>
+      <div className={ s.mainTitle }>
+        <h4>
+          { 
+            astronomyPicture.title.length > MAX_CHAR
+              ? astronomyPicture.explanation.slice(0, MAX_CHAR) + '...'
+              : astronomyPicture.title
+          }
+        </h4>
+        <p>{ astronomyPicture.date }</p>
+      </div>
     </div>
   )
 }

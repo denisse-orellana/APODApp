@@ -1,0 +1,30 @@
+.container {
+  padding-bottom: 1rem;
+}
+
+.img {
+  height: 350px;
+  width: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+.mainTitle {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  padding: 1rem 1rem .5rem 1rem;
+  margin-top: -6.8rem;
+  width: 350px;
+}
+
+.mainTitle h4 {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.mainTitle p {
+  color: var(--white);
+  font-size: 1.3rem;
+  font-weight: normal;
+}
