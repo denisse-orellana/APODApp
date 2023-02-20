@@ -7,3 +7,12 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+.title {
+  font-weight: bold;
+  font-size: 4rem;
+  color: var(--white);
+  padding: 1.5rem;
+  text-align: center;
+  background-color: var(--dark);
+}

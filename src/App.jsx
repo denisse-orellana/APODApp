@@ -5,6 +5,7 @@ import { AstronomyPictureOfDay } from './components/AstronomyPictureOfDay/Astron
 import { AstronomyPictureList } from './components/AstronomyPictureList/AstronomyPictureList';
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { SearchAstronomyMedia } from './components/SearchAstronomyMedia/SearchAstronomyMedia';
+import { AstronomyPictureToday } from './components/AstronomyPictureToday/AstronomyPictureToday';
 
 import Button from 'react-bootstrap/Button';
 
@@ -59,16 +60,6 @@ function App() {
     <>
       <div>
         <h1>NASA API</h1>
-
-        Astronomy Picture Of The Day
-
-        { currentAstronomyPicture && 
-          <AstronomyPictureOfDay 
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-            astronomyPicture={ currentAstronomyPicture } 
-          />  
-        }
       </div>
       <div>
         <h2>Search Bar</h2>
@@ -77,10 +68,22 @@ function App() {
       </div>
       <div>
         { currentAstronomyPicture && 
+          <AstronomyPictureToday astronomyPicture={ astronomyPictureList[0] } />
+        }
+      </div>
+      <div>
+        { currentAstronomyPicture && 
           <AstronomyPictureList
             astronomyPictureList={ astronomyPictureList } 
             onClickItem={ updateAstronomyPicture }
           />
+        }
+        { currentAstronomyPicture && 
+          <AstronomyPictureOfDay 
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            astronomyPicture={ currentAstronomyPicture } 
+          />  
         }
       </div>
     </>

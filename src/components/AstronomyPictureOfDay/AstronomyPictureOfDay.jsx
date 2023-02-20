@@ -34,7 +34,7 @@ export const AstronomyPictureOfDay = ( props ) => {
               : ""
             }
           </p>
-          <p>
+          <p className={ s.explanation }>
             { astronomyPicture.explanation }
           </p>
         </div>

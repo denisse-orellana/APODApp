@@ -1,0 +1,37 @@
+.title {
+  font-weight: bold;
+  font-size: 4rem;
+  color: var(--white);
+  padding: 1.5rem;
+  text-align: center;
+  background-color: var(--dark);
+  margin: 0;
+}
+
+.imageContainer {
+  height: 70vh;
+  background-color: black;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1.5rem;
+}
+
+p {
+  font-size: 1.7rem;
+  font-weight: normal;
+  text-align: justify;
+  text-justify: inter-word;
+  color: var(--white);
+}
+
+.titleImage {
+  font-weight: bold;
+  font-size: 1.9rem;
+}
+
+.copyright {
+  font-weight: bold;
+  font-size: 1.7rem;
+}

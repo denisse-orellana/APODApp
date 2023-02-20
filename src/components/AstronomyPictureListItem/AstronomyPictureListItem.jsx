@@ -20,7 +20,7 @@ export const AstronomyPictureListItem = ({ astronomyPicture, onClick }) => {
           <h4>
             { 
               astronomyPicture.title.length > MAX_CHAR
-                ? astronomyPicture.explanation.slice(0, MAX_CHAR) + '...'
+                ? astronomyPicture.title.slice(0, MAX_CHAR) + '...'
                 : astronomyPicture.title
             }
           </h4>
