@@ -58,11 +58,7 @@ function App() {
 
   return (
     <>
-      <NavBar image={ nasaLogo } />
-      <div>
-        <SearchBar onSubmit={ fetchByQuery }/>
-        { currentSearchAstronomy && <SearchAstronomyMedia searchAstronomy={ currentSearchAstronomy } />  }
-      </div>
+      <NavBar image={ nasaLogo } onSubmitItem={ fetchByQuery } />
       <div>
         { currentAstronomyPicture && 
           <AstronomyPictureToday astronomyPicture={ astronomyPictureList[0] } />
@@ -83,6 +79,9 @@ function App() {
           />  
         }
       </div>
+
+      { currentSearchAstronomy && <SearchAstronomyMedia searchAstronomy={ currentSearchAstronomy } />  }
+
     </>
   )
 }

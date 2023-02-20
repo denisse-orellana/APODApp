@@ -6,16 +6,3 @@ Nav h1 {
   text-align: center;
   color: var(--white)
 }
-
-.form {
-  font-size: 1.7rem !important;
-  margin-right: .5rem !important;
-}
-
-.search {
-  font-size: 1.7rem !important;
-  color: var(--white) !important;
-  border-color: var(--white) !important;
-  padding: .5rem 1rem !important;
-  background-color: var(--blue) !important;
-}

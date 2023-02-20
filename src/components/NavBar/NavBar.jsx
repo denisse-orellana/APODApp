@@ -1,3 +1,5 @@
+import { SearchBar } from '../SearchBar/SearchBar';
+
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -6,7 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import s from './style.module.css';
 
-export const NavBar = ({ image }) => {
+export const NavBar = ({ image, onSubmitItem }) => {
   return (
     <Navbar fixed="top" bg="dark" expand="lg">
     <Container fluid>
@@ -26,15 +28,9 @@ export const NavBar = ({ image }) => {
         >
           <h1>APOD | Astronomy Picture Of The Day</h1>
         </Nav>
-        <Form className="d-flex">
-          <Form.Control
-            type="search"
-            placeholder="Apollo 11"
-            className={ s.form }
-            aria-label="Search"
-          />
-          <Button className={ s.search } variant="outline-success">Search</Button>
-        </Form>
+
+        <SearchBar onSubmit={ onSubmitItem }/>
+
       </Navbar.Collapse>
     </Container>
   </Navbar>

@@ -1,3 +1,5 @@
+import Button from 'react-bootstrap/Button';
+
 import s from './style.module.css';
 
 export const SearchBar = ({ onSubmit }) => {
@@ -9,13 +11,15 @@ export const SearchBar = ({ onSubmit }) => {
   }
 
   return (
-    <div>
-      <h2>SearchBar</h2>
+    <div className="d-flex">
       <input 
         type="text" 
         onKeyUp={ submit }
         placeholder={ "Apollo 11" }  
+        className={ s.form }
       />
+
+      <Button className={ s.search } variant="outline-success">Search</Button>
     </div>
   )
 }
