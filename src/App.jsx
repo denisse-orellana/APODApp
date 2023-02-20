@@ -6,8 +6,10 @@ import { AstronomyPictureList } from './components/AstronomyPictureList/Astronom
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { SearchAstronomyMedia } from './components/SearchAstronomyMedia/SearchAstronomyMedia';
 import { AstronomyPictureToday } from './components/AstronomyPictureToday/AstronomyPictureToday';
+import { NavBar } from './components/NavBar/NavBar';
 
-import reactLogo from './assets/react.svg';
+import nasaLogo from './assets/nasa.png';
+
 import s from './style.module.css';
 
 function lastItem(array) {
@@ -56,11 +58,8 @@ function App() {
 
   return (
     <>
+      <NavBar image={ nasaLogo } />
       <div>
-        <h1>NASA API</h1>
-      </div>
-      <div>
-        <h2>Search Bar</h2>
         <SearchBar onSubmit={ fetchByQuery }/>
         { currentSearchAstronomy && <SearchAstronomyMedia searchAstronomy={ currentSearchAstronomy } />  }
       </div>
