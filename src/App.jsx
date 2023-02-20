@@ -7,8 +7,6 @@ import { SearchBar } from './components/SearchBar/SearchBar';
 import { SearchAstronomyMedia } from './components/SearchAstronomyMedia/SearchAstronomyMedia';
 import { AstronomyPictureToday } from './components/AstronomyPictureToday/AstronomyPictureToday';
 
-import Button from 'react-bootstrap/Button';
-
 import reactLogo from './assets/react.svg';
 import s from './style.module.css';
 
