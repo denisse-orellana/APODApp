@@ -9,21 +9,23 @@ export const AstronomyPictureListItem = ({ astronomyPicture, onClick }) => {
   }
 
   return (
-    <div onClick={onClick_} className={ s.container }>
-      <img 
-        className={ s.img }
-        src={ astronomyPicture.url } 
-        alt={ astronomyPicture.title } 
-      />
-      <div className={ s.mainTitle }>
-        <h4>
-          { 
-            astronomyPicture.title.length > MAX_CHAR
-              ? astronomyPicture.explanation.slice(0, MAX_CHAR) + '...'
-              : astronomyPicture.title
-          }
-        </h4>
-        <p>{ astronomyPicture.date }</p>
+    <div>
+      <div onClick={onClick_} className={ s.container }>
+        <img 
+          className={ s.img }
+          src={ astronomyPicture.url } 
+          alt={ astronomyPicture.title } 
+        />
+        <div className={ s.mainTitle }>
+          <h4>
+            { 
+              astronomyPicture.title.length > MAX_CHAR
+                ? astronomyPicture.explanation.slice(0, MAX_CHAR) + '...'
+                : astronomyPicture.title
+            }
+          </h4>
+          <p>{ astronomyPicture.date }</p>
+        </div>
       </div>
     </div>
   )

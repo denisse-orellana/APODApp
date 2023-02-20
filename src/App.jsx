@@ -45,7 +45,10 @@ function App() {
   }, [currentSearchAstronomy]);
 
   function updateAstronomyPicture(astronomyPicture) {
-    setCurrentAstronomyPicture(astronomyPicture);
+    if (astronomyPicture) {
+      setCurrentAstronomyPicture(astronomyPicture);
+      setModalShow(true);
+    }
   }
 
   useEffect(() => {
@@ -57,9 +60,7 @@ function App() {
       <div>
         <h1>NASA API</h1>
 
-        <Button variant="primary" onClick={() => setModalShow(true)}>
-          Astronomy Picture Of The Day
-        </Button>
+        Astronomy Picture Of The Day
 
         { currentAstronomyPicture && 
           <AstronomyPictureOfDay 

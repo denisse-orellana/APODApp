@@ -26,6 +26,7 @@ p {
 .copyright {
   font-weight: bold;
   font-size: 1.9rem;
+  color: var(--light-gray);
 }
 
 .close {
