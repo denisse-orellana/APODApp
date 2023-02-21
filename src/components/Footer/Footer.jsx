@@ -1,9 +1,9 @@
-import s from './style.module.css';
+import { FooterContainer } from './StyledFooter';
 
 export const Footer = () => {
   return (
-    <div className={ s.container }>
+    <FooterContainer>
       <h4>Thanks to Nasa for all the quality content available at <a href="https://api.nasa.gov/">NASA Open API.</a></h4> 
-    </div>
+    </FooterContainer>
   )
 }

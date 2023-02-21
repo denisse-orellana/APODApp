@@ -1,15 +1,15 @@
 import Spinner from 'react-bootstrap/Spinner';
 
-import s from './style.module.css';
+import { LoadingContainer } from './StyledLoading';
 
 export const Loading = () => {
   return (
-    <div className={ s.containerSpinners }>
-      <Spinner className={ s.spinner } variant="primary" animation="grow" size="sm" />
-      <Spinner className={ s.spinner } variant="primary" animation="grow" />
-      <Spinner className={ s.spinner } variant="danger" animation="grow" />
-      <Spinner className={ s.spinner } variant="light" animation="grow" />
-      <Spinner className={ s.spinner } variant="light" animation="grow" size="sm" />
-    </div>
+    <LoadingContainer>
+      <Spinner className={ 'mx-1' } variant="primary" animation="grow" size="sm" />
+      <Spinner className={ 'mx-1' } variant="primary" animation="grow" />
+      <Spinner className={ 'mx-1' } variant="danger" animation="grow" />
+      <Spinner className={ 'mx-1' } variant="light" animation="grow" />
+      <Spinner className={ 'mx-1' } variant="light" animation="grow" size="sm" />
+    </LoadingContainer>
   )
 }
