@@ -1,29 +1,28 @@
 import { useState, useEffect, useCallback } from 'react';
 
-import { NasaAPI } from "./api/nasa";
-import { AstronomyPictureOfDay } from './components/AstronomyPictureOfDay/AstronomyPictureOfDay';
-import { AstronomyPictureList } from './components/AstronomyPictureList/AstronomyPictureList';
-import { SearchBar } from './components/SearchBar/SearchBar';
-import { SearchAstronomyMedia } from './components/SearchAstronomyMedia/SearchAstronomyMedia';
-import { AstronomyPictureToday } from './components/AstronomyPictureToday/AstronomyPictureToday';
 import { NavBar } from './components/NavBar/NavBar';
-import { Footer } from './components/Footer/Footer';
+import { SearchAstronomyMedia } from './components/SearchAstronomyMedia/SearchAstronomyMedia';
 import { Loading } from './components/Loading/Loading';
+import { AstronomyPictureToday } from './components/AstronomyPictureToday/AstronomyPictureToday';
+import { AstronomyPictureList } from './components/AstronomyPictureList/AstronomyPictureList';
+import { AstronomyPictureOfDay } from './components/AstronomyPictureOfDay/AstronomyPictureOfDay';
+import { Footer } from './components/Footer/Footer';
+
+import { NasaAPI } from "./api/nasa";
 
 import nasaLogo from './assets/nasa.png';
-
 import s from './style.module.css';
 
 function lastItem(array) {
   if (array && array.length > 0) {
     let lastItem = array[array.length - 1]; return lastItem;
-  } return;
+  } 
 }
 
 function lastItemsArr(array) {
   if (array && array.length > 0) {
     let lastItemsArr = array.slice(-20).reverse(); return lastItemsArr;
-  } return;
+  } 
 }
 
 function App() {

@@ -24,7 +24,7 @@ export const AstronomyPictureToday = ({ astronomyPicture }) => {
               : ""
             }
           </p>
-          <p>
+          <p className={ s.explanation }>
             { 
               astronomyPicture.explanation.length > MAX_CHAR
                 ? astronomyPicture.explanation.slice(0, MAX_CHAR) + '...'
