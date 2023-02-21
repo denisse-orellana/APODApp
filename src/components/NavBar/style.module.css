@@ -4,5 +4,9 @@
 
 Nav h1 {
   text-align: center;
-  color: var(--white)
+  color: var(--white);
 }
+
+.navbar-toggler {
+  color: var(--white) !important;
+} 

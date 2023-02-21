@@ -12,7 +12,7 @@ export const SearchBar = ({ onSubmit }) => {
 
   return (
     <>
-      <div className="d-flex">
+      <div className="d-flex justify-content-center">
         <input 
           type="text" 
           onKeyUp={ submit }

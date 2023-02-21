@@ -7,6 +7,7 @@ import { SearchBar } from './components/SearchBar/SearchBar';
 import { SearchAstronomyMedia } from './components/SearchAstronomyMedia/SearchAstronomyMedia';
 import { AstronomyPictureToday } from './components/AstronomyPictureToday/AstronomyPictureToday';
 import { NavBar } from './components/NavBar/NavBar';
+import { Footer } from './components/Footer/Footer';
 
 import nasaLogo from './assets/nasa.png';
 
@@ -91,6 +92,7 @@ function App() {
           />  
         }
       </div>
+      <Footer />
     </>
   )
 }
