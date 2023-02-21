@@ -28,7 +28,9 @@ function App() {
   const [currentAstronomyPicture, setCurrentAstronomyPicture] = useState();
   const [astronomyPictureList, setAstronomyPictureList] = useState();
   const [currentSearchAstronomy, setCurrentSearchAstronomy] = useState();
+  
   const [modalShow, setModalShow] = useState(false);
+  const [modalSearchShow, setModalSearchShow] = useState(false);
 
   const fetchAPOD = useCallback(async () => {
     const astronomyPictureList = await NasaAPI.fetchAPOD();
@@ -42,6 +44,7 @@ function App() {
     const queryResponseList = await NasaAPI.fetchByQuery(query);
     if (queryResponseList && queryResponseList.length > 0) {
       setCurrentSearchAstronomy(lastItem(queryResponseList));
+      setModalSearchShow(true);
     }
   }, [currentSearchAstronomy]);
 
@@ -59,6 +62,15 @@ function App() {
   return (
     <>
       <NavBar image={ nasaLogo } onSubmitItem={ fetchByQuery } />
+
+        { currentSearchAstronomy && 
+          <SearchAstronomyMedia 
+            show={ modalSearchShow }
+            onHide={ () => setModalSearchShow(false) }
+            searchAstronomy={ currentSearchAstronomy } 
+          />  
+        }
+
       <div>
         { currentAstronomyPicture && 
           <AstronomyPictureToday astronomyPicture={ astronomyPictureList[0] } />
@@ -73,15 +85,12 @@ function App() {
         }
         { currentAstronomyPicture && 
           <AstronomyPictureOfDay 
-            show={modalShow}
-            onHide={() => setModalShow(false)}
+            show={ modalShow }
+            onHide={ () => setModalShow(false) }
             astronomyPicture={ currentAstronomyPicture } 
           />  
         }
       </div>
-
-      { currentSearchAstronomy && <SearchAstronomyMedia searchAstronomy={ currentSearchAstronomy } />  }
-
     </>
   )
 }

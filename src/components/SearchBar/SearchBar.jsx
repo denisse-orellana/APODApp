@@ -11,15 +11,17 @@ export const SearchBar = ({ onSubmit }) => {
   }
 
   return (
-    <div className="d-flex">
-      <input 
-        type="text" 
-        onKeyUp={ submit }
-        placeholder={ "Apollo 11" }  
-        className={ s.form }
-      />
+    <>
+      <div className="d-flex">
+        <input 
+          type="text" 
+          onKeyUp={ submit }
+          placeholder={ "Apollo 11" }  
+          className={ s.form }
+        />
 
-      <Button className={ s.search } variant="outline-success">Search</Button>
-    </div>
+        <Button className={ s.search } variant="outline-success">Search</Button>
+      </div>
+    </>
   )
 }
