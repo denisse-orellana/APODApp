@@ -8,6 +8,12 @@ import s from './style.module.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
+function findVideo(array) {
+  if (array && array.length > 0) {
+    let videoStr = array[0];
+    if (videoStr.endsWith(".mp4")) return videoStr;
+  }
+}
 
 export const SearchAstronomyMedia = ( props ) => {
 
@@ -18,7 +24,7 @@ export const SearchAstronomyMedia = ( props ) => {
   const fetchCollectionVideo = useCallback(async (url) => {
     const collectionVideos = await NasaAPI.fetchCollectionVideo(url);
     if (collectionVideos && collectionVideos.length > 0) {
-      setCurrentAstronomyVideo(collectionVideos[0]);
+      setCurrentAstronomyVideo(findVideo(collectionVideos));
     }
   }, [currentAstronomyVideo]);
 
@@ -27,7 +33,7 @@ export const SearchAstronomyMedia = ( props ) => {
       fetchCollectionVideo(searchAstronomy.href)
     }
   }, [searchAstronomy])
-  
+
   return (
     <Modal
       {...rest}
@@ -41,11 +47,16 @@ export const SearchAstronomyMedia = ( props ) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className='p-0'>
-        <img 
-          src={ searchAstronomy.links[0].href  }  
-          alt={ searchAstronomy.data[0].title} 
-          className={ s.img }
-        />
+        {
+          searchAstronomy.links[0].href 
+          ? 
+            <img 
+              src={ searchAstronomy.links[0].href  }  
+              alt={ searchAstronomy.data[0].title } 
+              className={ s.img }
+            />
+          : ""
+        }
         <div className='pt-5 px-5 pb-3'>
           <p className={ s.date }>{ searchAstronomy.data[0].date_created.slice(0,10) }</p>
           <p className={ s.explanation }>{ searchAstronomy.data[0].description }</p>
