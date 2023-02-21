@@ -8,6 +8,7 @@ import { SearchAstronomyMedia } from './components/SearchAstronomyMedia/SearchAs
 import { AstronomyPictureToday } from './components/AstronomyPictureToday/AstronomyPictureToday';
 import { NavBar } from './components/NavBar/NavBar';
 import { Footer } from './components/Footer/Footer';
+import { Loading } from './components/Loading/Loading';
 
 import nasaLogo from './assets/nasa.png';
 
@@ -73,6 +74,8 @@ function App() {
         }
 
       <div>
+        { currentAstronomyPicture ? '' : <Loading /> }
+
         { currentAstronomyPicture && 
           <AstronomyPictureToday astronomyPicture={ astronomyPictureList[0] } />
         }
