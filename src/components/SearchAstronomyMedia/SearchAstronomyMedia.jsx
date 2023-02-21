@@ -1,12 +1,11 @@
-import axios from "axios";
 import { useState, useEffect, useCallback } from 'react';
 
 import { NasaAPI } from "../../api/nasa";
 
-import s from './style.module.css';
-
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+
+import s from './style.module.css';
 
 function findVideo(array) {
   if (array && array.length > 0) {

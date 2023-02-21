@@ -1,8 +1,8 @@
 import { AstronomyPictureListItem } from "../AstronomyPictureListItem/AstronomyPictureListItem";
+
 import s from "./style.module.css";
 
 export const AstronomyPictureList = ({ astronomyPictureList, onClickItem }) => {
-
   return (
     <div className="apod-list">
       <div>
@@ -21,5 +21,4 @@ export const AstronomyPictureList = ({ astronomyPictureList, onClickItem }) => {
       </div>
     </div>
   )
-  
 }

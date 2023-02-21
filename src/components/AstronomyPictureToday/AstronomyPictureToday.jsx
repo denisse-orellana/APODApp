@@ -3,7 +3,6 @@ import s from './style.module.css';
 const MAX_CHAR = 150;
 
 export const AstronomyPictureToday = ({ astronomyPicture }) => {
-
   return (
     <>
       <div 

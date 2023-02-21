@@ -1,8 +1,6 @@
 import { SearchBar } from '../SearchBar/SearchBar';
 
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
@@ -29,7 +27,7 @@ export const NavBar = ({ image, onSubmitItem }) => {
           <h1>APOD | Astronomy Picture Of The Day</h1>
         </Nav>
 
-        <SearchBar onSubmit={ onSubmitItem }/>
+        <SearchBar onSubmit={ onSubmitItem } />
 
       </Navbar.Collapse>
     </Container>
