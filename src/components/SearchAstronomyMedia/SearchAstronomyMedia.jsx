@@ -54,7 +54,7 @@ export const SearchAstronomyMedia = ( props ) => {
               currentAstronomyVideo
               ? 
                 <video 
-                  className={'pt-5 pb-4'}
+                  className={'m-0 pt-3 pb-3'}
                   width={ '100%' }
                   height={ '350px' } 
                   controls 

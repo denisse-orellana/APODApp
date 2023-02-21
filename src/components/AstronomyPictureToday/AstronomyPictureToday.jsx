@@ -1,12 +1,11 @@
 import s from './style.module.css';
 
-const MAX_CHAR = 300;
+const MAX_CHAR = 150;
 
 export const AstronomyPictureToday = ({ astronomyPicture }) => {
 
   return (
     <>
-      <h2 className={ s.title }>Astronomy Picture Of The Day</h2>
       <div 
         className={ s.imageContainer }
         style={{

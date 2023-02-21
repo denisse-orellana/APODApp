@@ -1,3 +1,9 @@
+.imageContainer {
+  height: 90vh;
+  background-color: black;
+  margin-top: 90px;
+}
+
 .title {
   font-weight: bold;
   font-size: 4rem;
@@ -6,11 +12,6 @@
   text-align: center;
   background-color: var(--dark);
   margin: 0;
-}
-
-.imageContainer {
-  height: 70vh;
-  background-color: black;
 }
 
 .container {
