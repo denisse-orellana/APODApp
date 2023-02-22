@@ -2,7 +2,7 @@
 
 Project that shows the amazing pictures of the space with the NASA API.  
 
-*For [React JS - Full Stack MERN - Escalab Academy](https://escalab.tech/)*
+*Made by Denisse Orellana for [React JS - Full Stack MERN - Escalab Academy](https://escalab.tech/)*
 
 ## Tech
 
@@ -13,7 +13,7 @@ Project that shows the amazing pictures of the space with the NASA API.
 
 ## Preview 
 
-Deployed in Vercel: [APOD App](https://astronomypictureoftheday.vercel.app/) 
+Deployed in Vercel: [Astronomy Picture Of The Day](https://astronomypictureoftheday.vercel.app/) 
 
 <p>
   <img width="30%" src="/src/assets/preview/apodapp-mobile.png">
