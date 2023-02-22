@@ -13,7 +13,7 @@ Project that shows the amazing pictures of the space with the NASA API.
 
 ## Preview 
 
-Deployed in Vercel: [Astronomy Picture Of The Day](https://astronomypictureoftheday.vercel.app/) 
+Deployed in Vercel: [astronomypictureoftheday.vercel.app](https://astronomypictureoftheday.vercel.app/) 
 
 <p>
   <img width="30%" src="/src/assets/preview/apodapp-mobile.png">
