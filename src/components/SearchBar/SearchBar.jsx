@@ -15,11 +15,13 @@ export const SearchBar = ({ onSubmit }) => {
   }
 
   function handleChange(e) {
-    setCurrentInput(e.target.value);
+    if (e.target.value.trim() !== "") {
+      setCurrentInput(e.target.value);
+    }
   }
 
   function handleClick() {
-    if (currentInput !== "") {
+    if (currentInput) {
       onSubmit(currentInput);
     }
   }
