@@ -21,13 +21,14 @@ function lastItem(array) {
 
 function lastItemsArr(array) {
   if (array && array.length > 0) {
-    let lastItemsArr = array.slice(-20).reverse(); return lastItemsArr;
+    let lastItemsArr = array.reverse().slice(1,25); return lastItemsArr;
   } 
 }
 
 function App() {
+  const [todaysPicture, setTodaysPicture] = useState();
   const [currentAstronomyPicture, setCurrentAstronomyPicture] = useState();
-  const [astronomyPictureList, setAstronomyPictureList] = useState();
+  const [currentAstronomyPictureList, setCurrentAstronomyPictureList] = useState();
   const [currentSearchAstronomy, setCurrentSearchAstronomy] = useState();
   
   const [modalShow, setModalShow] = useState(false);
@@ -36,10 +37,11 @@ function App() {
   const fetchAPOD = useCallback(async () => {
     const astronomyPictureList = await NasaAPI.fetchAPOD();
     if (astronomyPictureList && astronomyPictureList.length > 0) {
+      setTodaysPicture(lastItem(astronomyPictureList));
       setCurrentAstronomyPicture(lastItem(astronomyPictureList));
-      setAstronomyPictureList(lastItemsArr(astronomyPictureList));
+      setCurrentAstronomyPictureList(lastItemsArr(astronomyPictureList));
     }
-  }, [currentAstronomyPicture, astronomyPictureList]);
+  }, [todaysPicture, currentAstronomyPicture, currentAstronomyPictureList]);
 
   const fetchByQuery = useCallback(async (query) => {
     const queryResponseList = await NasaAPI.fetchByQuery(query);
@@ -75,18 +77,12 @@ function App() {
       <div>
         { currentAstronomyPicture ? '' : <Loading /> }
 
-        { currentAstronomyPicture && 
-          <>
-            <span onClick={() => setModalShow(true)}>
-              <AstronomyPictureToday astronomyPicture={ astronomyPictureList[0] } />
-            </span>
-          </>
-        }
+        { currentAstronomyPicture && <AstronomyPictureToday astronomyPicture={ todaysPicture } /> }
       </div>
       <div>
         { currentAstronomyPicture && 
           <AstronomyPictureList
-            astronomyPictureList={ astronomyPictureList } 
+            astronomyPictureList={ currentAstronomyPictureList } 
             onClickItem={ updateAstronomyPicture }
           />
         }

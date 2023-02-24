@@ -1,8 +1,13 @@
+import { useState } from 'react';
+
 import s from './style.module.css';
 
 const MAX_CHAR = 150;
 
 export const AstronomyPictureToday = ({ astronomyPicture }) => {
+
+  const [showMore, setshowMore] = useState(false);
+
   return (
     <>
       <div 
@@ -14,25 +19,29 @@ export const AstronomyPictureToday = ({ astronomyPicture }) => {
             : "black",
         }}
       >
-        <div className={ s.container }>
-          <p className={ s.titleImage }>{ astronomyPicture.title }</p>
-          <p className={ s.copyright }> 
-            {
-              astronomyPicture.copyright 
-              ? `Image Credit & Copyright: ${ astronomyPicture.copyright }` 
-              : ""
-            }
-          </p>
-          <p className={ s.explanation }>
-            { 
-              astronomyPicture.explanation.length > MAX_CHAR
-                ? astronomyPicture.explanation.slice(0, MAX_CHAR) + '...'
-                : astronomyPicture.explanation
-            }
-            &emsp;
-            <span className={ s.copyright }>Know More</span>
-          </p>
-        </div>
+
+        <span onClick={ () => setshowMore(!showMore) }>
+          <div className={ s.container }>
+            <p className={ s.titleImage }>{ astronomyPicture.title }</p>
+            <p className={ s.copyright }> 
+              {
+                astronomyPicture.copyright 
+                ? `Image Credit & Copyright: ${ astronomyPicture.copyright }` 
+                : ""
+              }
+            </p>
+            <p className={ s.explanation }>
+              {
+                showMore ? astronomyPicture.explanation : astronomyPicture.explanation.slice(0, MAX_CHAR) + '...'
+              }
+              &emsp;
+              <span className={ s.copyright }> 
+                { showMore ? "Show less" : "Know more" }
+              </span>
+            </p>
+          </div>
+        </span>
+
       </div>
     </>
   )
