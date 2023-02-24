@@ -29,6 +29,8 @@ export const AstronomyPictureToday = ({ astronomyPicture }) => {
                 ? astronomyPicture.explanation.slice(0, MAX_CHAR) + '...'
                 : astronomyPicture.explanation
             }
+            &emsp;
+            <span className={ s.copyright }>Know More</span>
           </p>
         </div>
       </div>

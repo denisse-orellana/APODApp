@@ -76,7 +76,11 @@ function App() {
         { currentAstronomyPicture ? '' : <Loading /> }
 
         { currentAstronomyPicture && 
-          <AstronomyPictureToday astronomyPicture={ astronomyPictureList[0] } />
+          <>
+            <span onClick={() => setModalShow(true)}>
+              <AstronomyPictureToday astronomyPicture={ astronomyPictureList[0] } />
+            </span>
+          </>
         }
       </div>
       <div>
