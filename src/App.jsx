@@ -21,7 +21,7 @@ function lastItem(array) {
 
 function lastItemsArr(array) {
   if (array && array.length > 0) {
-    let lastItemsArr = array.reverse().slice(1,25); return lastItemsArr;
+    let lastItemsArr = array.reverse().slice(1,26); return lastItemsArr;
   } 
 }
 
