@@ -17,6 +17,7 @@
 .container {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 1.5rem;
+  padding-bottom: .1rem;
   cursor: pointer;
 }
 
@@ -31,6 +32,8 @@ p {
   font-weight: bold;
   font-size: 1.9rem;
   color: var(--white);
+  margin: 0;
+  padding-bottom: .1rem;
 }
 
 .copyright {

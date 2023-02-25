@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import s from './style.module.css';
 
-const MAX_CHAR = 150;
+const MAX_CHAR = 29;
 
 export const AstronomyPictureToday = ({ astronomyPicture }) => {
 
@@ -22,7 +22,7 @@ export const AstronomyPictureToday = ({ astronomyPicture }) => {
 
         <span onClick={ () => setshowMore(!showMore) }>
           <div className={ s.container }>
-            <p className={ s.titleImage }>{ astronomyPicture.title }</p>
+            <h6 className={ s.titleImage }>{ astronomyPicture.title }</h6>
             <p className={ s.copyright }> 
               {
                 astronomyPicture.copyright 
