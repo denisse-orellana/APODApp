@@ -20,6 +20,8 @@ export const SearchAstronomyMedia = ( props ) => {
 
   const [currentAstronomyVideo, setCurrentAstronomyVideo] = useState();
 
+  let date = new Date(searchAstronomy.data[0].date_created);
+
   const fetchCollectionVideo = useCallback(async (url) => {
     const collectionVideos = await NasaAPI.fetchCollectionVideo(url);
     if (collectionVideos && collectionVideos.length > 0) {
@@ -57,7 +59,7 @@ export const SearchAstronomyMedia = ( props ) => {
           : ""
         }
         <div className='pt-5 px-5 pb-3'>
-          <p className={ s.date }>{ searchAstronomy.data[0].date_created.slice(0,10) }</p>
+          <p className={ s.date }>{ date.toLocaleString('en-US', { dateStyle: 'long'  }) }</p>
           <p className={ s.explanation }>{ searchAstronomy.data[0].description }</p>
           <p className={ s.copyright }> 
             {

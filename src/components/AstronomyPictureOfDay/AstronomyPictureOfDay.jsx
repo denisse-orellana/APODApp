@@ -7,6 +7,8 @@ export const AstronomyPictureOfDay = ( props ) => {
 
   const { astronomyPicture, ...rest } = props;
 
+  let date = new Date(astronomyPicture.date);
+
   return (
     <Modal
       {...rest}
@@ -26,7 +28,7 @@ export const AstronomyPictureOfDay = ( props ) => {
           className={ s.img }
         />
         <div className='pt-5 px-5 pb-3'>
-          <p className={ s.date }>{ astronomyPicture.date }</p>
+          <p className={ s.date }>{ date.toLocaleString('en-US', { dateStyle: 'long' }) }</p>
           <p className={ s.copyright }> 
             {
               astronomyPicture.copyright 
