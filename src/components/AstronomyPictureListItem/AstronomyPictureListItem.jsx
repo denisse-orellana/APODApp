@@ -4,6 +4,8 @@ const MAX_CHAR = 35;
 
 export const AstronomyPictureListItem = ({ astronomyPicture, onClick }) => {
 
+  let date = new Date(astronomyPicture.date).toUTCString().slice(0,16);
+
   const onClick_ = () => {
     onClick(astronomyPicture);
   }
@@ -24,7 +26,7 @@ export const AstronomyPictureListItem = ({ astronomyPicture, onClick }) => {
                 : astronomyPicture.title
             }
           </h4>
-          <p>{ astronomyPicture.date }</p>
+          <p>{ date }</p>
         </div>
       </div>
     </div>
