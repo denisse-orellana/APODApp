@@ -1,9 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
 
+import { Loading } from '../Loading/Loading';
+
 import { NasaAPI } from "../../api/nasa";
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Spinner from 'react-bootstrap/Spinner';
 
 import s from './style.module.css';
 
@@ -56,7 +59,7 @@ export const SearchAstronomyMedia = ( props ) => {
               alt={ searchAstronomy.data[0].title } 
               className={ s.img }
             />
-          : ""
+          : <span className={ s.spinner }><Spinner animation="border" variant="primary" /></span>
         }
         <div className='pt-5 px-5 pb-3'>
           <p className={ s.date }>{ date }</p>

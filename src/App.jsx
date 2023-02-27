@@ -75,9 +75,7 @@ function App() {
         }
 
       <div>
-        { currentAstronomyPicture ? '' : <Loading /> }
-
-        { currentAstronomyPicture && <AstronomyPictureToday astronomyPicture={ todaysPicture } /> }
+        { currentAstronomyPicture ? <AstronomyPictureToday astronomyPicture={ todaysPicture } /> : <Loading /> }
       </div>
       <div>
         { currentAstronomyPicture && 
